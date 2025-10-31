@@ -1,0 +1,11 @@
+pyproject.toml
+setup.py
+LangSegment/LangSegment.py
+LangSegment/__init__.py
+LangSegment.egg-info/PKG-INFO
+LangSegment.egg-info/SOURCES.txt
+LangSegment.egg-info/dependency_links.txt
+LangSegment.egg-info/not-zip-safe
+LangSegment.egg-info/top_level.txt
+LangSegment/utils/__init__.py
+LangSegment/utils/num.py
