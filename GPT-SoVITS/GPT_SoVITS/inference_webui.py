@@ -58,14 +58,10 @@ pretrained_gpt_name,pretrained_sovits_name = _
 #         sovits_path = sovits_path[0]
 
 # 只从环境变量或预设列表里选第一个，不再用 weight.json
-gpt_path    = os.environ.get("gpt_path",    pretrained_gpt_name   [0])
-sovits_path = os.environ.get("sovits_path", pretrained_sovits_name[0])
-
-
-# gpt_path = os.environ.get(
-#     "gpt_path", pretrained_gpt_name
-# )
-# sovits_path = os.environ.get("sovits_path", pretrained_sovits_name)
+_env_gpt = os.environ.get("gpt_path", None)
+_env_sovits = os.environ.get("sovits_path", None)
+gpt_path    = _env_gpt if (_env_gpt not in [None, ""]) else (pretrained_gpt_name[0]    if len(pretrained_gpt_name)    > 0 else None)
+sovits_path = _env_sovits if (_env_sovits not in [None, ""]) else (pretrained_sovits_name[0] if len(pretrained_sovits_name) > 0 else None)
 cnhubert_base_path = os.environ.get(
     "cnhubert_base_path", "GPT_SoVITS/pretrained_models/chinese-hubert-base"
 )
